@@ -1,6 +1,6 @@
 const config = {
   port: process.env.PORT || 3001,
-  databaseUrl: process.env.MONGODB_URI || 'mongodb+srv://twwai:KTp5wYwutrLHPLT@cluster0.ooees.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+  databaseUrl: process.env.MONGODB_URI || 'mongodb+srv://tester:oLikfGFetDmEkDUF@test.gooxams.mongodb.net/taw-projekt',
   JwtSecret: process.env.JWT_SECRET || 'secret'
 };
 
