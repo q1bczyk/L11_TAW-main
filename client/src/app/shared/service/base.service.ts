@@ -12,7 +12,7 @@ export class BaseService{
     protected baseUrl : string = "http://localhost:3001/api/";
     protected setHeaders() : HttpHeaders{
         const token = localStorage.getItem('token');
-      
+        
         const headers = new HttpHeaders({
             'Authorization': `Bearer ${token}`
         });

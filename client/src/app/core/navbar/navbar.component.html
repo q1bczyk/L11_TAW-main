@@ -4,7 +4,7 @@
     <ul class="d-flex">
       <li><a [routerLinkActive]="'active'" [routerLink]="['posts']">Twoje posty</a></li>
       <li class="ms-2"><a [routerLinkActive]="'active'" [routerLink]="['add']">Dodaj post</a></li>
-      <li><button type="button" class="btn btn-outline-success ms-2">Wyloguj się</button></li>
+      <li><button (click)="logout()" type="button" class="btn btn-outline-success ms-2">Wyloguj się</button></li>
     </ul>
   </div>
 </div>

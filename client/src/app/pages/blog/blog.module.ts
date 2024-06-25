@@ -7,12 +7,14 @@ import { CardsComponent } from './pages/blog-home/components/cards/cards.compone
 import { BlogHomeComponent } from './pages/blog-home/blog-home.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AddPostComponent } from './pages/add-post/add-post.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     BlogRoutingModule,
     SharedModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     BlogComponent,
