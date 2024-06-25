@@ -5,7 +5,7 @@
         <app-cards [postData]="post"/>
       </div>
     </div>
-    <button *ngIf="paginatedPost && paginatedPost.paginationSize > 1" type="button" class="btn btn-outline-success" (click)="incrementPage()">Więcej postów</button>
+    <button *ngIf="paginatedPost && paginatedPost.paginationSize > 1 && currentPage < paginatedPost.paginationSize" type="button" class="btn btn-outline-success" (click)="incrementPage()">Więcej postów</button>
     <button (click)="scrollToTop()" *ngIf="currentPage > 1" type="button" class="btn btn-outline-success ms-2">Nowe posty</button>
   </div>
   <app-loader *ngIf="isLoading"/>

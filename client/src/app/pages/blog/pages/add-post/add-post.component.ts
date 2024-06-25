@@ -19,8 +19,8 @@ export class AddPostComponent implements OnInit{
   ngOnInit(): void {
     this.addPostForm = new FormGroup({
       title : new FormControl('', Validators.required),
-      text : new FormControl('', [Validators.required, Validators.minLength(8)]),
-      image : new FormControl('', [Validators.required])
+      text : new FormControl('', [Validators.required, Validators.minLength(2)]),
+      image : new FormControl('', [Validators.required, Validators.minLength(2)])
     })
   }
 

@@ -2,6 +2,7 @@
     <img [src]="postData?.image">
     <div>
         <h2 class="p-3">{{ postData?.title }}</h2>
-        <p class="px-3">{{ postData?.text }}</p>
+        <p class="px-3">{{ shortText(postData?.text || '') }}</p>
+       <button type="button" class="btn btn-outline-success ms-2">Szczegóły</button>
     </div>
 </div>
