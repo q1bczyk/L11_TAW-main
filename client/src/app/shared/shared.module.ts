@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoaderComponent } from './ui/loader/loader.component';
+import { ModalComponent } from './ui/modal/modal.component';
 
 
 @NgModule({
@@ -8,10 +9,12 @@ import { LoaderComponent } from './ui/loader/loader.component';
     CommonModule
   ],
   declarations : [
-    LoaderComponent
+    LoaderComponent,
+    ModalComponent,
   ],
   exports : [
-    LoaderComponent
+    LoaderComponent,
+    ModalComponent,
   ]
 })
 export class SharedModule { }

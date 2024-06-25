@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, MinLengthValidator, Validators } from '@angular/forms';
+import { ModalComponent } from 'src/app/shared/ui/modal/modal.component';
 
 @Component({
   selector: 'app-register',
@@ -10,6 +11,7 @@ export class RegisterComponent implements OnInit
 {
   registerForm : FormGroup = new FormGroup({});
   loading : boolean = false;
+  modal : ModalComponent = new ModalComponent();
 
   formValues = {
     login: '',
@@ -17,7 +19,7 @@ export class RegisterComponent implements OnInit
     password: ''
   };
 
-  ngOnInit(): void {
+  ngOnInit() : void {
       this.registerForm = new FormGroup({
         login : new FormControl(this.formValues.login, Validators.required),
         email : new FormControl(this.formValues.email, [Validators.required, Validators.email]),
@@ -28,6 +30,11 @@ export class RegisterComponent implements OnInit
   get controls() : string[]
   {
     return Object.keys(this.registerForm.controls);
+  }
+
+  onSubmit() : void
+  {
+    this.modal.open('details');
   }
 
 }
