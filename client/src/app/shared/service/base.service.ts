@@ -3,13 +3,13 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Injectable({
     providedIn : 'root'
-});
+})
 
 export class BaseService{
     
     constructor(protected http : HttpClient){}
 
-    protected baseUrl : string = "http://localhost:3001/api";
+    protected baseUrl : string = "http://localhost:3001/api/";
     protected setHeaders() : HttpHeaders{
         const token = localStorage.getItem('token');
       

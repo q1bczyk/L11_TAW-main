@@ -12,9 +12,10 @@ export class ModalComponent{
 
   private modalService = inject(NgbModal);
 
-	open(details : string) : void{
+	open(details : string, message : string) : void{
 		const modalRef = this.modalService.open(ModalContentComponent);
 		modalRef.componentInstance.details = details;
+    modalRef.componentInstance.message = message;
 	}
 
 }

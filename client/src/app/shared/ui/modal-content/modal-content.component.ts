@@ -10,5 +10,6 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class ModalContentComponent{
 
   activeModal = inject(NgbActiveModal);
+  @Input() message : string = '';
 	@Input() details: string = '';
 }
