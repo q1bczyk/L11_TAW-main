@@ -8,7 +8,8 @@ import { FormControl, FormGroup, MinLengthValidator, Validators } from '@angular
 })
 export class RegisterComponent implements OnInit
 {
-  registerForm: FormGroup = new FormGroup({});
+  registerForm : FormGroup = new FormGroup({});
+  loading : boolean = false;
 
   formValues = {
     login: '',
