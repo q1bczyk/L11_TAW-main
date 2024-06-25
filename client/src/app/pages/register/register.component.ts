@@ -41,8 +41,6 @@ export class RegisterComponent implements OnInit
       password : this.registerForm.get('password')?.value,
     }
 
-    console.log(data);
-
     this.loading = true;
     this.userService.register(data)
       .subscribe(res =>{ 
