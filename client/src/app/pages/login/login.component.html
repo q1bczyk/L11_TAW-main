@@ -1,21 +1,24 @@
-<h2>Zaloguj się</h2>
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <div class="form-group py-1" *ngFor="let control of controls">
-        <label [for]="control">{{ control | titlecase}}</label>
-        <input 
-            [id]="control"  
-            [type]="control === 'password' ? 'password' : 'text'" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
-            [placeholder]="'Wprowadź ' + control"
-            [formControlName]="control" 
-            >
-        <small *ngIf="registerForm.get(control)?.touched && registerForm.get(control)?.errors && control !== 'password'" class="form-text text-danger">
-            {{ control | titlecase }} is required
-        </small>
-        <small *ngIf="registerForm.get(control)?.touched && registerForm.get(control)?.errors && control == 'password'" class="form-text text-danger">
-            Min length 8
-        </small>
-    </div>
-    <button type="submit" class="btn btn-primary mt-1">Zatwierdź</button>    
-</form>
-<app-loader *ngIf="loading"/>
-<app-modal/>
+<div class="container d-flex flex-column align-items-center justify-content-center welcome-page">
+    <h2 class="col-12 col-md-6 col-xl-4 d-flex justify-content-start">Zaloguj się</h2>
+    <form class="col-12 col-md-6 col-xl-4" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group py-1" *ngFor="let control of controls">
+            <label [for]="control">{{ control | titlecase}}</label>
+            <input [id]="control" [type]="control === 'password' ? 'password' : 'text'" class="form-control"
+                id="exampleInputEmail1" aria-describedby="emailHelp" [placeholder]="'Wprowadź ' + control"
+                [formControlName]="control">
+            <small
+                *ngIf="registerForm.get(control)?.touched && registerForm.get(control)?.errors && control !== 'password'"
+                class="form-text text-danger">
+                {{ control | titlecase }} is required
+            </small>
+            <small
+                *ngIf="registerForm.get(control)?.touched && registerForm.get(control)?.errors && control == 'password'"
+                class="form-text text-danger">
+                Min length 8
+            </small>
+        </div>
+        <button type="submit" class="btn btn-primary mt-1">Zaloguj</button>
+    </form>
+    <app-loader *ngIf="loading" />
+    <app-modal />
+</div>
