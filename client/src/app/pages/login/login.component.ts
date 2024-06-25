@@ -43,6 +43,7 @@ export class LoginComponent {
     this.userService.login(data)
       .subscribe(res =>{ 
         this.loading = false;
+        localStorage.setItem('token', res.token);
         this.router.navigate(['/blog'])
       }, err => {
         this.loading = false;

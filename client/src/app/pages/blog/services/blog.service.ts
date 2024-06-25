@@ -1,8 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, map } from "rxjs";
 import { BaseService } from "src/app/shared/service/base.service";
-import { IGetPost } from "../models/get-post.interface";
+import { IGetPaginationPost } from "../models/get-pagination-post.interface";
 
 @Injectable({
     providedIn: 'root'
@@ -16,10 +16,15 @@ export class BlogService extends BaseService
         super(http);
     }
 
-    getPaginatedPosts(page : number, size : number) : Observable<IGetPost>
+    getPaginatedPosts(page : number) : Observable<IGetPaginationPost>
     {
-        const params : string = `?page=${page}&size=${size}`
-        return this.http.get<IGetPost>(this.url + params, )
+        const params : string = `?currentPage=${page}`
+        return this.http.get<IGetPaginationPost>(this.url + params, {headers : this.setHeaders()})
+            .pipe(
+                map(res => {
+                    return res;
+                })
+            )
     } 
 
     

@@ -1,3 +1,12 @@
-<div class="container-fluid">
-  blog-home works!
+<div class="container-fluid py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-4 py-2" *ngFor="let post of   paginatedPost?.posts">
+        <app-cards [postData]="post"/>
+      </div>
+    </div>
+    <button *ngIf="paginatedPost && paginatedPost.paginationSize > 1" type="button" class="btn btn-outline-success" (click)="incrementPage()">Więcej postów</button>
+    <button (click)="scrollToTop()" *ngIf="currentPage > 1" type="button" class="btn btn-outline-success ms-2">Nowe posty</button>
+  </div>
+  <app-loader *ngIf="isLoading"/>
 </div>
